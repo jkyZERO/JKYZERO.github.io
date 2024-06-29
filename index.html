@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Максим jkyZERO</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .section {
+            flex-basis: calc(25% - 20px);
+            margin-bottom: 40px;
+            background-color: #3a3a3a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #b19cd9;
+            border-bottom: 2px solid #b19cd9;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b19cd9;
+            color: #2a2a2a;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #9a7ecc;
+        }
+
+        a {
+            color: #b19cd9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1200px) {
+            .section {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>jkyZERO</h1>
+    <p class="subtitle">Python,HTML5,CSS3,JS, Enjoyer ^_^</p>
+</header>
+
+<div class="container">
+    <div class="content">
+        <div class="section">
+            <h2>О мне</h2>
+            <p>Привет меня зовут jkyZERO Это моя визитка и просто проект) хочу жить в кайф </p>
+        </div>
+
+        <div class="section">
+            <h2>Навыки</h2>
+            <ul>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>React, Vue.js</li>
+                <li>Node.js, Express</li>
+                <li>Python, Django</li>
+                <li>SQL, MongoDB</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Проекты</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>App Manager</h3>
+                    <p>Приложение которое качает программы,допустим после переустановки виндовс что бы не открывать в браузере по 100 вкладок а сразу скачать все нужное для жизни</p>
+                </div>
+                <div class="project">
+                    <h3>Визитка сайт</h3>
+                    <p>Этот сайт</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Контакты</h2>
+            <p>Email: luxmazx@gmail.com</p>
+            <p>GitHub: <a href="https://github.com/jkyZERO">github.com/jkyZERO</a></p>
+            <p>Discord: <a href="https://discord//ymxpixelcoder">@ymxpixelcoder</a></p>
+            <p>Telegram: <a href="https://t.me/nlejky">@nlejky</a></p>
+
+            <a href="#" class="btn">Связаться со мной через тг лучший выбор</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Добавим небольшую анимацию при прокрутке
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    });
+</script>
+</body>
+</html>
